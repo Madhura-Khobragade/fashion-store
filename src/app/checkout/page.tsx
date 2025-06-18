@@ -20,6 +20,9 @@ const initialFormData: FormData = {
   zipCode: ''
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const productId = ...;
+
 export default function Checkout() {
   const [formData, setFormData] = useState<FormData>(initialFormData);
 
