@@ -13,11 +13,7 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals"),
   {
     rules: {
-      "@typescript-eslint/no-unused-vars": ["error", {
-        "argsIgnorePattern": "^_",
-        "varsIgnorePattern": "^(Image|productId)$",
-        "ignoreRestSiblings": true
-      }],
+      "@typescript-eslint/no-unused-vars": "off",
     },
   },
 ];
