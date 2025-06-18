@@ -61,22 +61,28 @@ const products: Product[] = [
 
 export default function Products() {
   return (
-    <main className="max-w-7xl mx-auto px-4 py-16">
-      <h1 className="text-4xl font-bold mb-8">Our Products</h1>
+    <main className="max-w-7xl mx-auto px-4 py-12 md:py-16">
+      <h1 className="text-3xl md:text-4xl font-bold mb-6 md:mb-8">Our Products</h1>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8">
         {products.map((product) => (
           <div key={product.id} className="group">
-            <div className="relative h-[400px] mb-4">
+            <div className="relative h-[250px] sm:h-[300px] md:h-[350px] mb-4 overflow-hidden rounded-lg">
               <Image
                 src={product.image}
                 alt={product.name}
                 fill
-                className="object-cover rounded-lg"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                quality={85}
+                style={{ 
+                  objectFit: 'cover',
+                  objectPosition: 'center'
+                }}
+                className="rounded-lg transition-transform duration-300 group-hover:scale-105"
               />
             </div>
             <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
-            <p className="text-gray-600 mb-2">${product.price.toFixed(2)}</p>
+            <p className="text-gray-600 mb-3">${product.price.toFixed(2)}</p>
             <Link
               href={`/checkout?product=${product.id}`}
               className="block w-full bg-black text-white text-center py-2 rounded-lg hover:bg-gray-800 transition"

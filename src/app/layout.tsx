@@ -17,9 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navigation />
-        {children}
+      <body className={`${inter.className} min-h-screen flex flex-col`}>
+        <Navigation className="relative z-50" />
+        <div className="flex-grow relative">
+          {children}
+        </div>
       </body>
     </html>
   );
