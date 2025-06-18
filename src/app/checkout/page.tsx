@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import Image from 'next/image';
 
 interface FormData {
   name: string;
@@ -24,6 +23,7 @@ const initialFormData: FormData = {
 
 export default function Checkout() {
   const searchParams = useSearchParams();
+  // productId will be used for order processing in the future
   const productId = searchParams.get('product');
   
   const [formData, setFormData] = useState<FormData>(initialFormData);
