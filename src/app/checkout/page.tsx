@@ -22,10 +22,6 @@ const initialFormData: FormData = {
 };
 
 export default function Checkout() {
-  const searchParams = useSearchParams();
-  // productId will be used for order processing in the future
-  const productId = searchParams.get('product');
-  
   const [formData, setFormData] = useState<FormData>(initialFormData);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
