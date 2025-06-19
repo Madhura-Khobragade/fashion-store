@@ -51,7 +51,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {categories.map((category) => (
             <div key={category.name} className="relative h-[400px] group">
-              <Image
+          <Image
                 src={category.image}
                 alt={category.name}
                 fill
@@ -61,13 +61,13 @@ export default function Home() {
                 <Link 
                   href={`/products?category=${category.name.toLowerCase()}`}
                   className="text-white text-xl font-semibold"
-                >
+        >
                   {category.name}
                 </Link>
               </div>
             </div>
           ))}
-        </div>
+    </div>
       </section>
     </main>
   );

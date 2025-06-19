@@ -66,15 +66,13 @@ export default function Products() {
       
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {products.map((product) => (
-          <div key={product.id} className="group">
-            <div className="relative h-[400px] mb-4">
-              <Image
-                src={product.image}
-                alt={product.name}
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
+          <div key={product.id} className="relative h-64 mb-4 group">
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              className="object-cover rounded-lg"
+            />
             <h3 className="text-lg font-semibold mb-2">{product.name}</h3>
             <p className="text-gray-600 mb-2">${product.price.toFixed(2)}</p>
             <Link
